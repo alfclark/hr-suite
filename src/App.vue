@@ -15,7 +15,7 @@ export default {
 
 <style>
 :root {
-  --green: #459795;
+  --green: #7bb0af80;
   --yellow: #eece6f;
   --orange: #da745f;
   --blue: #beddf7;
