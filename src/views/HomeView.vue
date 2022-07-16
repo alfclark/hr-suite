@@ -3,22 +3,17 @@
     <h2 class="title">Manejo de Candidatos</h2>
     <!-- Seccion input añadir un candidato -->
     <div class="addSection">
-      <h4 class="addTitle">Añadir Candidato y fecha de entrevista</h4>
-      <form class="inputSection" @submit.prevent="addNewTodo">
+      <h4 class="addTitle">Añadir Candidato y Fecha de Entrevista</h4>
+      <form class="inputSection" @submit.prevent="addNewCandidate">
         <input
           v-model="candidateName"
-          name="candidateName"
           placeholder="Nombre del candidato"
           autocomplete="off"
           class="nameInput"
+          required
         />
-        <input
-          class="dateInput"
-          type="date"
-          v-model="interviewDate"
-          name="interviewDate"
-        />
-        <button class="addCandidate">
+        <input class="dateInput" type="date" v-model="interviewDate" required />
+        <button type="submit" class="addCandidate">
           <i class="fa-solid fa-plus"></i>
         </button>
       </form>
@@ -27,22 +22,26 @@
     <div class="candidatesList">
       <h4>Lista de Candidatos</h4>
       <ul class="candidates">
-        <li class="candidate">
+        <li
+          class="candidate"
+          v-for="(candidate, index) in candidates"
+          :key="candidate.id"
+        >
           <div class="candidateInfo">
             <div class="candidateImg">
               <i class="fa-solid fa-user"></i>
             </div>
             <div class="infoSection name">
               <h6 class="subtitle">Nombre</h6>
-              <h4 class="sectionValue">José Robles</h4>
+              <h4 class="sectionValue">{{ candidate.name }}</h4>
             </div>
             <div class="infoSection">
               <h6 class="subtitle">Fecha Entrevista</h6>
-              <h5 class="sectionValue">06/05/2026</h5>
+              <h5 class="sectionValue">{{ candidate.date }}</h5>
             </div>
             <div class="infoSection actions">
               <router-link class="details" to="">Detalles</router-link>
-              <button class="deleteCandidate">
+              <button @click="deleteCandidate(index)" class="deleteCandidate">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -54,8 +53,36 @@
 </template>
 
 <script>
-// @ is an alias to /src
-export default {};
+import { ref } from "vue";
+export default {
+  setup() {
+    const candidateName = ref("");
+    const interviewDate = ref("");
+    const candidates = ref([]);
+    function addNewCandidate() {
+      candidates.value.push({
+        id: Date.now(),
+        name: candidateName.value,
+        date: interviewDate.value,
+      });
+      candidateName.value = "";
+      interviewDate.value = "";
+      console.log(candidates);
+    }
+    function deleteCandidate(index) {
+      candidates.value.splice(index, 1);
+      console.log(candidates);
+    }
+
+    return {
+      interviewDate,
+      candidateName,
+      candidates,
+      addNewCandidate,
+      deleteCandidate,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -128,11 +155,13 @@ input {
 .candidate {
   list-style: none;
   box-shadow: 0 0 5px #00000040;
+  width: 537px;
 }
 
 .candidateInfo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .candidateImg {
@@ -151,6 +180,10 @@ input {
 }
 .sectionValue {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  font-size: 1.2rem;
 }
 .actions {
   display: flex;
