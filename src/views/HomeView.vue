@@ -105,7 +105,7 @@ input {
   transition: 0.4s;
 }
 .addCandidate:hover {
-  background-color: var(--yellow);
+  background-color: var(--green);
 }
 
 /* Seccion lista de candidatos */
@@ -160,7 +160,7 @@ input {
 }
 .details {
   text-decoration: none;
-  background-color: var(--blue);
+  background-color: var(--green);
   color: var(--carbon);
   padding: 0.3rem 0.7rem;
   transition: 0.4s;
