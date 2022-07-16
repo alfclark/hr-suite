@@ -16,8 +16,13 @@ export default {
 <style>
 :root {
   --green: #459795;
-  --yellow: #cfad48;
-  --orange: #dc5134;
+  --yellow: #eece6f;
+  --orange: #da745f;
+  --blue: #beddf7;
+  --lightBlue: #e4eff8;
+  --red: #ffa0a0;
+  --carbon: #2b303a;
+  --grey: rgb(187, 187, 187);
 }
 #app {
   padding: 0;
