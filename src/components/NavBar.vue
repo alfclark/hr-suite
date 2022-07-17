@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <router-link class="navbar-brand" to="/">
         <img class="logo" src="@/assets/logo.png" alt="" />
-      </a>
-      <button
+      </router-link>
+      <!--  <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
@@ -21,7 +21,7 @@
             <router-link class="link" to="/">Home</router-link>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </nav>
 </template>
@@ -35,14 +35,11 @@ export default {};
 .logo {
   width: 40px;
 }
-.link {
+/* .link {
   margin: 1rem;
 }
 .navbar .navbar-collapse {
   text-align: center;
   color: var(--green);
-}
-.fa-solid {
-  font-size: 2rem;
-}
+} */
 </style>
