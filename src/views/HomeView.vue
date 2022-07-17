@@ -60,10 +60,40 @@
 </template>
 
 <script>
-/* import { onUnmounted, ref, reactive } from "vue";
-import { db } from "@/firebase/db"; */
+import { ref, reactive } from "vue";
+import { db } from "@/firebase/db";
 
-export default {};
+export default {
+  setup() {
+    const candidates = ref([]);
+    const newCandidate = reactive({
+      reg: null,
+      name: "",
+      date: "",
+      java: false,
+      microServices: false,
+      elastic: false,
+    });
+    const candidateCollection = db.collection("candidates");
+
+    /* FUNCION AÑADIR UN CANDIDATO A LA DB */
+    function addNewCandidate() {
+      candidateCollection.add({
+        ...newCandidate,
+        reg: Date.now(),
+      });
+      newCandidate.name = "";
+      newCandidate.date = "";
+    }
+
+    return {
+      newCandidate,
+      candidates,
+      candidateCollection,
+      addNewCandidate,
+    };
+  },
+};
 </script>
 
 <style scoped>
