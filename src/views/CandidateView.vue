@@ -7,20 +7,25 @@
       <i class="fa-solid fa-user"></i>
     </div>
     <div class="info">
-      <h4>José Robles</h4>
-      <h6>10/02/2022</h6>
+      <h4>{{ candidate.name }}</h4>
+      <h6>{{ candidate.date }}</h6>
     </div>
     <div class="skills">
       <h5>Habilidades:</h5>
       <form @submit.prevent="" class="skillsList">
-        <input type="checkbox" class="skill" name="java" />
+        <input v-model="java" type="checkbox" class="skill" id="java" />
         <label for="java">Java</label><br />
-        <input type="checkbox" class="skill" name="microservices" />
+        <input
+          v-model="microservices"
+          type="checkbox"
+          class="skill"
+          id="microservices"
+        />
         <label for="microservices">Microservices</label><br />
-        <input type="checkbox" class="skill" name="elastic" />
-        <label for="elastic">NodeJS</label><br />
+        <input v-model="nodejs" type="checkbox" class="skill" id="nodejs" />
+        <label for="nodejs">NodeJS</label><br />
         <div class="actions">
-          <button class="save">Guardar</button>
+          <button @click="saveSkills" class="save">Guardar</button>
         </div>
       </form>
     </div>
@@ -29,15 +34,64 @@
 
 <script>
 import { useRoute } from "vue-router";
+import { db } from "@/firebase/db";
+import { onUnmounted, ref } from "@vue/runtime-core";
 
 export default {
   setup() {
     const route = useRoute();
     const candidateID = route.params.id;
+    const candidateCollection = db.collection("candidates");
+    const candidate = ref({});
 
-    console.log(candidateID);
+    const java = ref(null);
+    const microservices = ref(null);
+    const nodejs = ref(null);
 
-    return {};
+    /* FUNCION GATHER CANDIDATE INFO */
+    const getCandidate = candidateCollection
+      .doc(candidateID)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          /* console.log(doc.data()); */
+          candidate.value = doc.data();
+          java.value = doc.data().java;
+          microservices.value = doc.data().microservices;
+          nodejs.value = doc.data().nodejs;
+        } else {
+          console.log("Candidate not found");
+        }
+      });
+    onUnmounted(getCandidate);
+
+    /* FUNCION ACTUALIZAR SKILLS */
+    function saveSkills() {
+      candidateCollection
+        .doc(candidateID)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            doc.ref.update({
+              microservices: microservices.value,
+              java: java.value,
+              nodejs: nodejs.value,
+            });
+          } else {
+            console.log("Candidate not found");
+          }
+        });
+    }
+
+    return {
+      candidateID,
+      candidateCollection,
+      candidate,
+      java,
+      microservices,
+      nodejs,
+      saveSkills,
+    };
   },
 };
 </script>
