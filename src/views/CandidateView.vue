@@ -28,7 +28,18 @@
 </template>
 
 <script>
-export default {};
+import { useRoute } from "vue-router";
+
+export default {
+  setup() {
+    const route = useRoute();
+    const candidateID = route.params.id;
+
+    console.log(candidateID);
+
+    return {};
+  },
+};
 </script>
 
 <style scoped>
