@@ -1,6 +1,8 @@
 <template>
   <NavBar />
-  <router-view />
+  <main>
+    <router-view />
+  </main>
 </template>
 
 <script>
@@ -22,7 +24,7 @@ export default {
   --lightBlue: #e4eff8;
   --red: #ffa0a0;
   --carbon: #2b303a;
-  --grey: rgb(187, 187, 187);
+  --grey: #bbbbbb;
 }
 #app {
   padding: 0;
