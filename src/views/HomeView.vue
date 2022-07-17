@@ -71,8 +71,8 @@ export default {
       name: "",
       date: "",
       java: false,
-      microServices: false,
-      elastic: false,
+      microservices: false,
+      nodejs: false,
     });
     const candidateCollection = db.collection("candidates");
 
