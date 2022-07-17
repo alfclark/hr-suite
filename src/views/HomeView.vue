@@ -157,6 +157,7 @@ section {
 
 .inputSection {
   background-color: var(--lightBlue);
+  display: flex;
 }
 input {
   background-color: transparent;
@@ -173,7 +174,6 @@ input {
 .dateInput {
   margin: 0 2rem;
   padding: 0 1rem;
-  border-left: solid 1px black;
 }
 .addCandidate {
   background-color: transparent;
@@ -261,5 +261,35 @@ input {
 
 .deleteCandidate:hover {
   background-color: var(--red);
+}
+
+@media screen and (max-width: 600px) {
+  h4 {
+    font-size: 90%;
+  }
+  .inputSection {
+    width: 90vw;
+  }
+  .nameInput {
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  .dateInput {
+    padding: 0;
+    font-size: 0.8rem;
+    margin: 0 1rem;
+  }
+  .candidate {
+    width: 95vw;
+  }
+  .subtitle {
+    font-size: 0.5rem;
+  }
+  .sectionValue {
+    font-size: 0.8rem;
+  }
+  .details {
+    font-size: 0.8rem;
+  }
 }
 </style>
