@@ -1,8 +1,8 @@
 <template>
   <NavBar />
-  <main>
+  <Transition>
     <router-view />
-  </main>
+  </Transition>
 </template>
 
 <script>
@@ -30,5 +30,16 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+/* Transiciones router*/
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
