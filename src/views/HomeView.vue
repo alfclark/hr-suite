@@ -97,6 +97,30 @@ export default {
         }));
       });
 
+    /* FUNCION ELIMINAR CANDIDATO */
+    function deleteCandidate(candidateID) {
+      candidateCollection
+        .doc(candidateID)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            doc.ref
+              .delete()
+              .then(() => {
+                console.log("Candidato eliminado");
+              })
+              .catch((error) => {
+                console.log("No se pudo eliminar: ", error);
+              });
+          } else {
+            console.log("Candidate no encontrado!");
+          }
+        })
+        .catch((error) => {
+          console.log("Candidato no existe!", error);
+        });
+    }
+
     /* EJECUCION DE LA FUNCION TOMAR DB */
     onUnmounted(getDatabase);
 
@@ -105,6 +129,7 @@ export default {
       candidates,
       candidateCollection,
       addNewCandidate,
+      deleteCandidate,
     };
   },
 };
