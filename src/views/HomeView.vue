@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { ref, reactive } from "vue";
+import { onUnmounted, ref, reactive } from "vue";
 import { db } from "@/firebase/db";
 
 export default {
@@ -85,6 +85,20 @@ export default {
       newCandidate.name = "";
       newCandidate.date = "";
     }
+
+    /* FUNCION RETRIEVE DB */
+    const getDatabase = candidateCollection
+      .orderBy("reg", "desc")
+      .onSnapshot((snapshot) => {
+        /* console.log(snapshot.docs); */
+        candidates.value = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      });
+
+    /* EJECUCION DE LA FUNCION TOMAR DB */
+    onUnmounted(getDatabase);
 
     return {
       newCandidate,
