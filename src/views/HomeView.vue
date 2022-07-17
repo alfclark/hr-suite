@@ -6,13 +6,18 @@
       <h4 class="addTitle">Añadir Candidato y Fecha de Entrevista</h4>
       <form class="inputSection" @submit.prevent="addNewCandidate">
         <input
-          v-model="candidateName"
+          v-model="newCandidate.name"
           placeholder="Nombre del candidato"
           autocomplete="off"
           class="nameInput"
           required
         />
-        <input class="dateInput" type="date" v-model="interviewDate" required />
+        <input
+          class="dateInput"
+          type="date"
+          v-model="newCandidate.date"
+          required
+        />
         <button type="submit" class="addCandidate">
           <i class="fa-solid fa-plus"></i>
         </button>
@@ -24,8 +29,8 @@
       <ul class="candidates">
         <li
           class="candidate"
-          v-for="(candidate, index) in candidates"
-          :key="candidate.id"
+          v-for="{ id, name, date } in candidates"
+          :key="id"
         >
           <div class="candidateInfo">
             <div class="candidateImg">
@@ -33,15 +38,17 @@
             </div>
             <div class="infoSection name">
               <h6 class="subtitle">Nombre</h6>
-              <h4 class="sectionValue">{{ candidate.name }}</h4>
+              <h4 class="sectionValue">{{ name }}</h4>
             </div>
             <div class="infoSection">
               <h6 class="subtitle">Fecha Entrevista</h6>
-              <h5 class="sectionValue">{{ candidate.date }}</h5>
+              <h5 class="sectionValue">{{ date }}</h5>
             </div>
             <div class="infoSection actions">
-              <router-link class="details" to="">Detalles</router-link>
-              <button @click="deleteCandidate(index)" class="deleteCandidate">
+              <router-link class="details" :to="'/candidate/' + id">
+                Detalles
+              </router-link>
+              <button @click="deleteCandidate(id)" class="deleteCandidate">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -53,36 +60,10 @@
 </template>
 
 <script>
-import { ref } from "vue";
-export default {
-  setup() {
-    const candidateName = ref("");
-    const interviewDate = ref("");
-    const candidates = ref([]);
-    function addNewCandidate() {
-      candidates.value.push({
-        id: Date.now(),
-        name: candidateName.value,
-        date: interviewDate.value,
-      });
-      candidateName.value = "";
-      interviewDate.value = "";
-      console.log(candidates);
-    }
-    function deleteCandidate(index) {
-      candidates.value.splice(index, 1);
-      console.log(candidates);
-    }
+/* import { onUnmounted, ref, reactive } from "vue";
+import { db } from "@/firebase/db"; */
 
-    return {
-      interviewDate,
-      candidateName,
-      candidates,
-      addNewCandidate,
-      deleteCandidate,
-    };
-  },
-};
+export default {};
 </script>
 
 <style scoped>
@@ -184,6 +165,7 @@ input {
   text-overflow: ellipsis;
   max-width: 200px;
   font-size: 1.2rem;
+  text-transform: capitalize;
 }
 .actions {
   display: flex;
