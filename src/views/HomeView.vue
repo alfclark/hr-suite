@@ -174,6 +174,7 @@ input {
 }
 .dateInput {
   padding: 0 1rem;
+  color: var(--carbon);
 }
 .addCandidate {
   background-color: transparent;
