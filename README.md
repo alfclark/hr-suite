@@ -12,3 +12,9 @@ Web Development Practice (AWS/GCP – Firebase) Trainee SPS
 - CSS3
 - Vue Router
 - Firebase
+
+## Features
+- Add candidates in recruiment process to cloud database. 
+- List candidates from  database.
+- Manage and delete candidates from database.
+- Add skills to candidate profile.
