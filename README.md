@@ -1,6 +1,6 @@
-# Vue Ecommerce Site
+# Candidate Management
 
-Ecommerce site project for Alura Oracle Next Education program
+Web Development Practice (AWS/GCP – Firebase) Trainee SPS
 
 ## Live Preview
 [LINK](https://graceful-moonbeam-57555d.netlify.app/)
