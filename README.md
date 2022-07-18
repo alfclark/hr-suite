@@ -18,3 +18,6 @@ Web Development Practice (AWS/GCP – Firebase) Trainee SPS
 - List candidates from  database.
 - Manage and delete candidates from database.
 - Add skills to candidate profile.
+
+
+[ASSETS](https://ibb.co/album/3B6LrH)
