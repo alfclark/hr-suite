@@ -1,24 +1,14 @@
-# practica-desarrollo-web
+# Vue Ecommerce Site
 
-## Project setup
-```
-npm install
-```
+Ecommerce site project for Alura Oracle Next Education program
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Live Preview
+[LINK](https://graceful-moonbeam-57555d.netlify.app/)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Technologies:
+- Vue
+- HTML5
+- Javascript
+- CSS3
+- Vue Router
+- Firebase
