@@ -25,7 +25,9 @@
         <input v-model="nodejs" type="checkbox" class="skill" id="nodejs" />
         <label for="nodejs">NodeJS</label><br />
         <div class="actions">
-          <button @click="saveSkills" class="save">Guardar</button>
+          <button :class="{ saved: saved }" @click="saveSkills" class="save">
+            Guardar
+          </button>
         </div>
       </form>
     </div>
@@ -36,6 +38,7 @@
 import { useRoute } from "vue-router";
 import { db } from "@/firebase/db";
 import { onUnmounted, ref } from "@vue/runtime-core";
+import router from "@/router";
 
 export default {
   setup() {
@@ -72,11 +75,16 @@ export default {
         .get()
         .then((doc) => {
           if (doc.exists) {
-            doc.ref.update({
-              microservices: microservices.value,
-              java: java.value,
-              nodejs: nodejs.value,
-            });
+            doc.ref
+              .update({
+                microservices: microservices.value,
+                java: java.value,
+                nodejs: nodejs.value,
+              })
+              .then(() => {
+                alert("Guardado!");
+                router.push("/");
+              });
           } else {
             console.log("Candidate not found");
           }
@@ -90,6 +98,7 @@ export default {
       java,
       microservices,
       nodejs,
+      saved: false,
       saveSkills,
     };
   },
@@ -161,5 +170,9 @@ label {
 .save:hover {
   box-shadow: 0 0 5px #00000040;
   background-color: var(--grey);
+}
+
+.saved {
+  background-color: green;
 }
 </style>
