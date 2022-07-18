@@ -24,10 +24,10 @@
 ## 2. Diseño y metodología
 - **Diseño del proyecto**
     1. Lluvia de ideas y definiendo tecnologías
-    ![](src\assets\snips\lluviaIdeas.jpg)
+    ![](https://i.ibb.co/pvH6jcm/Luuvia-de-ideas.jpg)
 
     2. Draft Funcionamiento
-    ![](src\assets\snips\Diagrama.jpg)
+    ![](https://i.ibb.co/CQfTz2Y/Diagrama.jpg)
 
     3. Tecnologías
         - Front End
@@ -41,64 +41,64 @@
             - Firebase
 
     4. Boceto
-    ![](src\assets\snips\Diagrama.jpg)
+    ![](https://i.ibb.co/BLmMMM2/Draft.jpg)
 
     5. Mock en Figma
         - Interfaz 1
-        ![](src\assets\snips\mock1.png)
+        ![](https://i.ibb.co/f4fD1rw/mock1.png)
         - Interfaz 2
         ![](src\assets\snips\NULL.png)
 
 
 
 - **Cronograma**
-![](src\assets\snips\Draft.jpg)
+![](https://i.ibb.co/FH5FP50/cronograma.png)
 
 ## 3. Proceso de desarrollo del proyecto
 - **Creando Repositorio**
-![](src\assets\snips\createRepo.png)
+![](https://i.ibb.co/0B8DyTx/creando-repo.png)
 - **Creando proyecto local**
     1. Instalando Vue.js con Vue CLI 
-        ![](src\assets\snips\localCreate.png)
+        ![](https://i.ibb.co/pQ14VSJ/vue-create.png)
 
     2. Limpiando el boilerplate
-        ![](src\assets\snips\boilerplate.png)
+        ![](https://i.ibb.co/BcF3vtL/boilerplate.png)
 
     3. Instalando librerías
         - Bootstrap
-            ![](src\assets\snips\bootstrap.png)
+            ![](https://i.ibb.co/RbCPLYn/bootstrap.png)
         - Font Awesome
-            ![](src\assets\snips\fontawesome.png)
+            ![](https://i.ibb.co/MZvfg3g/fontawesome.png)
     4. Creando el Routing
-        ![](src\assets\snips\router.png)
+        ![](https://i.ibb.co/FYnP3Hf/router.png)
 
     5. Desarrollo Front End
         - Creando NavBar
-            ![](src\assets\snips\navbar.png)
+            ![](https://i.ibb.co/JHqL2mB/navbar.png)
         - Creación Rutas del routing
-            ![](src\assets\snips\routing.png)
+            ![](https://i.ibb.co/drLDN9Q/routing.png)
         - View Home
             1. Sección añadir candidato
-                ![](src\assets\snips\añadircandidato.png)
+                ![](https://i.ibb.co/FghKGLG/a-adircandidato.png)
                 - *Resultado:*
-                    ![](src\assets\snips\seccionañadir.png)
+                    ![](https://i.ibb.co/VDcNb8J/secciona-adir.png)
             2. Sección lista candidatos
-                ![](src\assets\snips\listacandidatos.png)
+                ![](https://i.ibb.co/mBtmVYc/listacandidatos.png)
                 - *Resultado:*
-                    ![](src\assets\snips\seccionlista.png)
+                    ![](https://i.ibb.co/mhbZK1P/seccionlista.png)
         - View Candidato
             1. Sección datos candidato
-                ![](src\assets\snips\datoscandidato.png)
+                ![](https://i.ibb.co/Qpp2525/datos-candidato.png)
                 - *Resultado:*
-                    ![](src\assets\snips\secciondatos.png)
+                    ![](https://i.ibb.co/8N5Txc8/secciondatos.png)
             2. Sección habilidades candidatos
-                ![](src\assets\snips\skillscandidato.png)
+                ![](https://i.ibb.co/w7BPzrV/skills-candidato.png)
                 - *Resultado:*
-                    ![](src\assets\snips\seccionhabilidades.png)
+                    ![](https://i.ibb.co/BcbJSxc/seccionhabilidades.png)
 
     6. Desarrollo Back End
         - Configuración SDK Firebase
-            ![](src\assets\snips\firebase.png)
+            ![](https://i.ibb.co/166Jr9t/firebase.png)
 
     7. Back End + Front End
         >Posterior al Desarrollo de este proyecto, mi experiencia con Firebase era nula. Por lo que se utilizó la documentación de Firebase y Stack Overflow para poder crear las funciones de lectura y escritura (CRUD) para interactuar con la base de datos.
@@ -107,28 +107,28 @@
 
         - Componente Home 
             1. Creación de variables REF
-                ![](src\assets\snips\variables.png)
+                ![](https://i.ibb.co/QJ7XsJ3/variables.png)
             2. Función leer database
-                ![](src\assets\snips\getDatabase.png)
+                ![](https://i.ibb.co/DKmsPsg/leer-database.png)
             3. Función añadir database
-                ![](src\assets\snips\addtoDatabase.png)
+                ![](https://i.ibb.co/94CXpWH/a-adir-a-database.png)
             4. Función eliminar candidato
-                ![](src\assets\snips\deleteCandidate.png)
+                ![](https://i.ibb.co/jr9YDNh/eliminar-de-database.png)
 
         - Componente Vista Candidato 
             1. Routing ID Candidato
-                ![](src\assets\snips\useRoute.png)
+                ![](https://i.ibb.co/XbhdY3Y/useRoute.png)
             2. Función tomar candidato
-                ![](src\assets\snips\getCandidate.png)
+                ![](https://i.ibb.co/mCYmQRC/get-candidate.png)
             3. Función modificar habilidades
-                ![](src\assets\snips\updateSkills.png)
+                ![](https://i.ibb.co/KmcPk3j/update-candidate.png)
            
 ## 4. Hosting
 - Link a repositorio de GitHub
     > Utilicé la función de Netlify para tomar un repositorio existente de GitHub para desplegar la aplicación.
 - Configuración Netlify comando de build y directorio de    publicación para proyecto de Vue.
 
-    ![](src\assets\snips\netlifyConfig.png)
+    ![](https://i.ibb.co/m9vgzG1/netlify-Config.png)
 
 
 ## 5. Áreas de Mejora
