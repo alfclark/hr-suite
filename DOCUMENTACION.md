@@ -45,7 +45,7 @@
 
     5. Mock en Figma
         - Interfaz 1
-        ![](src\assets\snips\mock1.png)
+        ![](assets\snips\mock1.png)
         - Interfaz 2
         ![](src\assets\snips\NULL.png)
 
