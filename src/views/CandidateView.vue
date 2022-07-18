@@ -8,7 +8,7 @@
     </div>
     <div class="info">
       <h4>{{ candidate.name }}</h4>
-      <h6>{{ candidate.date }}</h6>
+      <h6>Fecha de entrevista: {{ candidate.date }}</h6>
     </div>
     <div class="skills">
       <h5>Habilidades:</h5>
