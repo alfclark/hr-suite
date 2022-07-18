@@ -158,6 +158,8 @@ section {
 .inputSection {
   background-color: var(--lightBlue);
   display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
 }
 input {
   background-color: transparent;
@@ -168,11 +170,9 @@ input {
   outline: none;
 }
 .nameInput {
-  margin: 0 1rem;
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
 }
 .dateInput {
-  margin: 0 2rem;
   padding: 0 1rem;
 }
 .addCandidate {
@@ -271,13 +271,11 @@ input {
     width: 90vw;
   }
   .nameInput {
-    padding: 0;
     font-size: 0.8rem;
   }
   .dateInput {
     padding: 0;
     font-size: 0.8rem;
-    margin: 0 1rem;
   }
   .candidate {
     width: 95vw;
