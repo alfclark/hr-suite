@@ -133,9 +133,21 @@
 
 
 ## 5. Áreas de Mejora
-    Sin duda, el proceso de producción del Back End fue mi mayor debilidad del proyecto. Tuve problemas para lograr la conexión de la aplicación con la base de datos y poder interactuar con los documentos almacenados.
+    Sin duda, el proceso de producción del Back End fue mi mayor debilidad del proyecto. Fue un gran desafío lograr la conexión de la aplicación con la base de datos y poder interactuar con los documentos almacenados, pero aprendí mucho con la actividad y tengo una mayor noción de la metodología a utilizar en futuros proyectos.
 
     La mayoría de la documentación disponible está para utilizar con Vue.js 2 con la inclusión de la librería VueFire la cual acorta y simplifica las funciones, pero no tiene soporte para Vue.js 3.
+    
+## 6. What's next!
+    - Home
+        - Sección de candidatos eliminados con función de borrado permanente o restauración.
+    - Vista candidato
+        - Opción de agregar imagen de perfil
+        - Opción de adjuntar documentos como curriculum
+        - Opción de agregar resumen del perfil
+        - Opción de agregar skills
+        - Estado del candidato
+        - Notificación Toast al realizar cambios en el candidato
+    
 
 
 
