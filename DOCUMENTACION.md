@@ -45,10 +45,10 @@
 
     5. Mock en Figma
         - Interfaz 1
-        ![](https://i.ibb.co/f4fD1rw/mock1.png)
+            ![](https://i.ibb.co/f4fD1rw/mock1.png)
 
         - Interfaz 2
-        ![](https://i.ibb.co/8x6DDZX/mock2.png)
+            ![](https://i.ibb.co/8x6DDZX/mock2.png)
 
 
 
