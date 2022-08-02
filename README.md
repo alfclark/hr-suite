@@ -3,7 +3,7 @@
 Web Development Practice (AWS/GCP – Firebase) Trainee SPS
 
 ## Live Preview
-[LINK](https://graceful-moonbeam-57555d.netlify.app/)
+[LINK](https://recruitment-management.netlify.app)
 
 ## Technologies:
 - Vue
