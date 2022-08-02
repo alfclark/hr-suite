@@ -1,13 +1,13 @@
 <template>
   <section class="Home">
-    <h2 class="title">Manejo de Candidatos</h2>
+    <h2 class="title">Recruiment Management System</h2>
     <!-- Seccion input añadir un candidato -->
     <div class="addSection">
-      <h4 class="addTitle">Añadir Candidato y Fecha de Entrevista</h4>
+      <h4 class="addTitle">Add Candidate and Date of Interview</h4>
       <form class="inputSection" @submit.prevent="addNewCandidate">
         <input
           v-model="newCandidate.name"
-          placeholder="Nombre del candidato"
+          placeholder="Candidate name"
           autocomplete="off"
           class="nameInput"
           required
@@ -25,7 +25,7 @@
     </div>
     <!-- Seccion Lista candidatos -->
     <div class="candidatesList">
-      <h4>Lista de Candidatos</h4>
+      <h4>Candidates List</h4>
       <ul class="candidates">
         <li
           class="candidate"
@@ -37,16 +37,16 @@
               <i class="fa-solid fa-user"></i>
             </div>
             <div class="infoSection name">
-              <h6 class="subtitle">Nombre</h6>
+              <h6 class="subtitle">Name</h6>
               <h4 class="sectionValue">{{ name }}</h4>
             </div>
             <div class="infoSection">
-              <h6 class="subtitle">Fecha Entrevista</h6>
+              <h6 class="subtitle">Interview Date</h6>
               <h5 class="sectionValue">{{ date }}</h5>
             </div>
             <div class="infoSection actions">
               <router-link class="details" :to="'/candidate/' + id">
-                Detalles
+                Details
               </router-link>
               <button @click="deleteCandidate(id)" class="deleteCandidate">
                 <i class="fa-solid fa-xmark"></i>

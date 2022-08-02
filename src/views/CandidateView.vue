@@ -1,17 +1,17 @@
 <template>
   <section class="user">
     <div class="back">
-      <router-link class="backBtn" to="/">Atras</router-link>
+      <router-link class="backBtn" to="/">Back</router-link>
     </div>
     <div class="img">
       <i class="fa-solid fa-user"></i>
     </div>
     <div class="info">
       <h4>{{ candidate.name }}</h4>
-      <h6>Fecha de entrevista: {{ candidate.date }}</h6>
+      <h6>Date of Interview: {{ candidate.date }}</h6>
     </div>
     <div class="skills">
-      <h5>Habilidades:</h5>
+      <h5>Skills:</h5>
       <form @submit.prevent="" class="skillsList">
         <input v-model="java" type="checkbox" class="skill" id="java" />
         <label for="java">Java</label><br />
@@ -26,7 +26,7 @@
         <label for="nodejs">NodeJS</label><br />
         <div class="actions">
           <button :class="{ saved: saved }" @click="saveSkills" class="save">
-            Guardar
+            Save
           </button>
         </div>
       </form>
