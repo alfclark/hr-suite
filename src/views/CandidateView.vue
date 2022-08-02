@@ -82,7 +82,7 @@ export default {
                 nodejs: nodejs.value,
               })
               .then(() => {
-                alert("Guardado!");
+                alert("Saved!");
                 router.push("/");
               });
           } else {
