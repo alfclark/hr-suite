@@ -1,7 +1,5 @@
 # Candidate Management
 
-Web Development Practice (AWS/GCP – Firebase) Trainee SPS
-
 ## Live Preview
 [LINK](https://recruitment-management.netlify.app)
 
